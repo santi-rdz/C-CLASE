@@ -1,0 +1,10 @@
+{
+  "files.associations": {
+    "*.dbclient-js": "javascript",
+    "producto.h": "c",
+    "stdio.h": "c",
+    "stdlib.h": "c",
+    "string.h": "c",
+    "inventario.h": "c"
+  }
+}

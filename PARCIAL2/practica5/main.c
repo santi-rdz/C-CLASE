@@ -1,45 +1,7 @@
 #include <stdio.h>
 
-int len(char cadena[]){
-   int i = 0;
-   while (cadena[i] && cadena[i] != '\n')
-      i++;
-   
-   
-   return i;
-}
-
-int isPalindrome(char palabra[]){
-
-      int longitud = len(palabra);
-      palabra[longitud] = '\0';
-
-      char *inicio = &palabra[0];
-      char *fin = &palabra[longitud-1];
-      
-      printf("\n------\n");
-
-      while (inicio < fin)
-      {
-         if (*inicio == ' ') inicio++;
-         if (*fin == ' ') fin--;
-      
-         *inicio == *fin 
-         ?printf("%c == %c \n", *inicio, *fin)
-         :printf("%c != %c \n", *inicio, *fin);
-
-         if (inicio >= fin) break;
-
-         if (*inicio != *fin) return 0;
-
-         inicio++;
-         fin--;
-      }
-      printf("------\n""inicio en -> %c %p\n", *inicio, inicio);
-      printf("fin en -> %c %p\n\n", *fin, fin);
-      return 1;
-
-}
+int len(char *);
+int isPalindrome(char *);
 
 int main(void){
    char palabra[256];
@@ -66,12 +28,42 @@ int main(void){
       else printf("Opcion invalida!");
      
    }
-   
-
-   
-  
-
-   
-   
    return 0;
+}
+int isPalindrome(char *palabra){
+
+   int longitud = len(palabra);
+   palabra[longitud] = '\0';
+
+   char *inicio = &palabra[0];
+   char *fin = &palabra[longitud-1];
+   
+   printf("\n------\n");
+
+   while (inicio < fin){
+      if (*inicio == ' ') inicio++;
+      if (*fin == ' ') fin--;
+   
+      *inicio == *fin 
+      ?printf("%c == %c \n", *inicio, *fin)
+      :printf("%c != %c \n", *inicio, *fin);
+
+      if (inicio >= fin) break;
+
+      if (*inicio != *fin) return 0;
+
+      inicio++;
+      fin--;
+   }
+   printf("------\n""inicio en -> %c %p\n", *inicio, inicio);
+   printf("fin en -> %c %p\n\n", *fin, fin);
+   return 1;
+
+}
+
+int len(char *cadena){
+   int i = 0;
+   while (cadena[i] && cadena[i] != '\n')
+      i++;
+   return i;
 }

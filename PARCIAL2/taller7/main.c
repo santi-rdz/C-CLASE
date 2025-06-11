@@ -91,7 +91,7 @@ int replaceChar(char target, char replace, char *cadena){
 
 void stringToUpper(char *cadena){
    while (*cadena){
-      if (*cadena >= 97 && *cadena <= 122)
+      if (*cadena >= 'a' && *cadena <= 'z')
          *cadena -= 32;
       cadena++;
    }
@@ -99,7 +99,7 @@ void stringToUpper(char *cadena){
 
 void stringToLower(char *cadena){
    while (*cadena){
-      if (*cadena >= 65 && *cadena <= 90)
+      if (*cadena >= 'A' && *cadena <= 'Z')
          *cadena += 32;
       cadena++;  
    }
